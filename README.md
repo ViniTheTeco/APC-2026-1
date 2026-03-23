@@ -1,2 +1,5 @@
 # APC-2026-1
 Repositório utilizado na disciplina de Algoritmos e Programação de Computadores na Universidade de Brasília
+Sou Vinícius, atualmente aluno de Engenharia Elétrica na UnB (Se tudo der certo não por muito tempo, estou apenas fazendo as matérias necessárias para fazer alteração interna de curso para Engenharia Civil... não aguento mais programar, não gosto e quanto mais longe puder ficar pra mim melhor)
+Lista de Projetos: Estou atualmente, muito lentamente, tentando fazer um programa utilizando IA para conversão de PDFs em Planilhas como google sheets e Excel
+Reflexões: Não aguento mais engenharia elétrica, felizmente me identifiquei com a engenharia civil quando fiz Introdução a Mecânica dos Sólidos porque pelo amor de deus meu ódio pela engenharia elétrica cresce mais a cada dia que preciso ficar 1 hora no transito pra chegar na universidade e ter que escutar um bando de profressores do ENE mal amados que querem que resolva um maldito circuito elétrico usando MATLAB em uma prova escrita A PAPEL ou Octavia! Só tem maluco nesse diabo.
