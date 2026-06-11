@@ -1,0 +1,22 @@
+# Semana 04
+
+`input()` sempre retorna texto, então se precisar de número tem que converter. `print()` com f-string é bem prático pra misturar texto e variável:
+
+## Booleanos compostos
+
+Dá pra combinar condições com `and`, `or` e `not`. O Python usa curto-circuito, ou seja, se o primeiro valor de um `and` for False ele nem avalia o segundo.
+
+E as mensagens de commit com prefixo semântico: `feat:` pra coisa nova, `fix:` pra correção, `docs:` pra documentação.
+
+## Code.org
+
+- Random numbers
+- Sprites
+- Sprite Properties
+- Text
+
+## Ferramentas
+
+- Python THONNY THONNY
+- Git
+- Code.org Game Lab — https://code.org/educate/gamelab
