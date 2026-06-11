@@ -1,0 +1,32 @@
+# Semana 03
+
+## Variáveis e tipos
+
+Em Python não precisa declarar o tipo, ele descobre sozinho. Os tipos básicos são `int`, `float`, `str` e `bool`.
+
+## Operadores
+
+Os aritméticos são `+`, `-`, `*`, `/`, `//` pra divisão inteira e `%` pro resto. Potência é `**`.
+
+Os relacionais comparam valores e retornam True ou False: `==`, `!=`, `>`, `<`, `>=`, `<=`.
+
+Os lógicos são `and`, `or` e `not`.
+
+Tem também os de atribuição composta tipo `+=` e `-=` que são um atalho pra `x = x + algo`.
+
+A precedência segue a matemática normal, parênteses primeiro.
+
+## Code.org
+
+Essa semana também teve atividades no Game Lab do Code.org em JavaScript:
+
+- Drawing in Game Lab
+- Shapes and Parameters
+- Variables
+
+Os conceitos são os mesmos, só a sintaxe muda. Em JavaScript variável se declara com `var` ou `let`.
+
+## Ferramentas
+
+- Python 3
+- Code.org Game Lab — https://code.org/educate/gamelab
