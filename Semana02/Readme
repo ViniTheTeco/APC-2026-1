@@ -1,0 +1,28 @@
+# Semana 02
+
+Essa semana teve: simulador de CPU no OctoStudio, o LMC, e os primeiros passos com Git e GitHub.
+
+## Simulador de CPU no OctoStudio
+
+A ideia era usar o OctoStudio pra representar como uma CPU funciona por dentro. O sprite representa a CPU, as variáveis representam os registradores e os blocos representam as instruções sendo executadas.
+
+Foi interessante ver isso de forma visual porque a CPU não faz nada mágico, ela só executa uma instrução por vez e vai atualizando os registradores.
+
+O simulador foi compartilhado no WhatsApp da turma.
+
+## LMC
+
+Executei um programa simples no Little Man Computer e fui acompanhando o que acontecia no acumulador e na memória a cada passo. Fica mais claro que uma instrução de máquina é só um número e a CPU decide o que fazer com ele.
+
+## Git e GitHub
+
+Criei a conta no GitHub e configurei o perfil.
+
+
+Também criei o README.md principal com uma apresentação pessoal e referência ao simulador da semana passada.
+
+## Ferramentas
+
+- OctoStudio — https://octostudio.org
+- Little Man Computer — https://peterhigginson.co.uk/LMC/
+- GitHub — https://github.com
