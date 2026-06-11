@@ -1,0 +1,16 @@
+# Semana 09
+
+## Revisão de tipos e estruturas
+
+Sem novidade conceitual, só consolidar a sintaxe Python:
+
+- `if/elif/else` pra condicionais
+- `while` quando não sei quantas repetições
+- `for` quando sei o intervalo ou a coleção
+- `type()` pra verificar o tipo de uma variável na hora que precisar
+
+## Ferramentas
+
+- Python 3
+- VS Code
+- Python Tutor — https://pythontutor.com
