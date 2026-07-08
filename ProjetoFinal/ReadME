@@ -1,0 +1,15 @@
+COMO RODAR O PROGRAMA:
+1. Abra o terminal (Prompt de Comando ou PowerShell) na pasta do projeto.
+2. Instale as bibliotecas necessárias digitando o comando:
+   pip install pandas matplotlib openpyxl
+3. Execute o programa digitando o comando:
+   python sistema.py
+COMO EXPORTAR OS DADOS:
+Na barra lateral esquerda do programa, clique nos botoes para salvar:
+- "Exportar Estatísticas (.txt)": Salva o resumo da regiao selecionada.
+- "Exportar Ranking Completo (.txt)": Salva a lista ordenada de todas as regioes.
+- "Exportar Dados Filtrados (.csv)": Salva a tabela limpa da regiao selecionada para abrir no Excel.
+COMO AS TABELAS FUNCIONAM:
+- O programa usa dois arquivos: "domicilios (2).xlsx" (dados das casas) e "moradores.csv" (dados das pessoas).
+- Ele limpa automaticamente as respostas em branco ou invalidas (codigos 99999 e 88888) para as estatisticas ficarem certas.
+- Ele cruza as duas tabelas encontrando o responsavel por cada casa, gerando a analise que relaciona a escolaridade do chefe da familia com o acesso a saneamento e internet.
