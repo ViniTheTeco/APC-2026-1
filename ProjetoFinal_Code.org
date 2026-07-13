@@ -1,1 +1,11 @@
 https://studio.code.org/projects/gamelab/cbe3f6dd-66c6-4146-ba4b-103e7ee8051c
+
+
+
+Readme:
+Como Funciona o Jogo
+Objetivo: Controlar a cobrinha para comer os itens laranjas (comidas) espalhados pela tela.
+Crescimento e Pontuação: Cada vez que a cobrinha come um item laranja, ela cresce em tamanho (+1 bloco) e você ganha 1 ponto.
+Aceleração: Conforme a cobrinha come e cresce, a velocidade do jogo aumenta gradualmente (o tempo de resposta diminui).
+Bordas Cíclicas: A cobrinha pode atravessar as bordas da tela. Ao sair por um lado, ela reaparece no lado oposto.
+Fim de Jogo (Game Over): O jogo termina se a cobrinha colidir com o próprio corpo.
