@@ -1,0 +1,176 @@
+// =============================================
+// JOGO DA COBRINHA
+// Como jogar: use as SETAS DO TECLADO para mover
+// Coma os itens laranjas para crescer e pontuar
+// Cuidado: colidir com voce mesmo = game over!
+// =============================================
+
+// ── 1. VARIAVEIS E PONTO INICIAL ─────────────
+var CELL = 20;
+var COLS = 20;
+var ROWS = 20;
+var score = 0;
+var alive = true;
+var moveTimer = 0;
+var moveSpeed = 8;
+var windT = 0;
+var snakeLen = 3;
+var dirX = 1; var dirY = 0;
+var nextX = 1; var nextY = 0;
+var foodX = 5; var foodY = 5;
+var gameOverOn = false;
+
+var sX = [];
+var sY = [];
+sX[0] = 10; sX[1] = 9; sX[2] = 8;
+sY[0] = 10; sY[1] = 10; sY[2] = 10;
+
+var gx0=2;  var gy0=3;  var gh0=5;
+var gx1=7;  var gy1=1;  var gh1=4;
+var gx2=14; var gy2=6;  var gh2=6;
+var gx3=18; var gy3=11; var gh3=3;
+var gx4=5;  var gy4=15; var gh4=5;
+var gx5=11; var gy5=18; var gh5=4;
+var gx6=16; var gy6=4;  var gh6=6;
+var gx7=3;  var gy7=13; var gh7=3;
+var gx8=9;  var gy8=8;  var gh8=5;
+
+// ── 2. FUNDO E GRAMA ALTA ────────────────────
+function drawBackground(){
+  background("rgb(99,153,34)");
+  fill("rgb(90,140,30)");
+  noStroke();
+  rect(20,20,20,20);   rect(80,60,20,20);   rect(140,100,20,20);
+  rect(200,140,20,20); rect(260,180,20,20); rect(320,220,20,20);
+  rect(40,240,20,20);  rect(160,300,20,20); rect(280,340,20,20);
+  rect(100,380,20,20); rect(360,80,20,20);  rect(220,260,20,20);
+}
+
+function drawGrassBlade(gx, gy, gh){
+  var sway = Math.sin(windT + gx * 0.7) * 2;
+  var bx = gx*CELL + CELL/2;
+  var by = gy*CELL + CELL;
+  stroke("rgb(39,80,10)");
+  strokeWeight(2);
+  line(bx, by, bx + sway, by - gh*4);
+  line(bx+3, by, bx + sway - 2, by - gh*3);
+  noStroke();
+}
+
+function drawTallGrass(){
+  windT = windT + 0.04;
+  drawGrassBlade(gx0,gy0,gh0);
+  drawGrassBlade(gx1,gy1,gh1);
+  drawGrassBlade(gx2,gy2,gh2);
+  drawGrassBlade(gx3,gy3,gh3);
+  drawGrassBlade(gx4,gy4,gh4);
+  drawGrassBlade(gx5,gy5,gh5);
+  drawGrassBlade(gx6,gy6,gh6);
+  drawGrassBlade(gx7,gy7,gh7);
+  drawGrassBlade(gx8,gy8,gh8);
+}
+
+// ── 3. PONTUACAO ─────────────────────────────
+function drawScore(){
+  noStroke();
+  textSize(14);
+  fill("black");
+  text("Pontos: " + score + " | Tam: " + snakeLen, 7, 7, 210, 28);
+  fill("yellow");
+  text("Pontos: " + score + " | Tam: " + snakeLen, 6, 6, 210, 28);
+}
+
+// ── 4. COBRA E COMIDA ────────────────────────
+function drawSnake(){
+  var i;
+  for(i = 0; i < snakeLen; i++){
+    if(i === 0){
+      fill("rgb(92,51,23)");
+    } else if(i % 2 === 0){
+      fill("rgb(123,74,30)");
+    } else {
+      fill("rgb(139,90,43)");
+    }
+    noStroke();
+    rect(sX[i]*CELL+1, sY[i]*CELL+1, CELL-2, CELL-2);
+  }
+  fill("red");
+  ellipse(sX[0]*CELL+5, sY[0]*CELL+5, 5, 5);
+  ellipse(sX[0]*CELL+CELL-5, sY[0]*CELL+5, 5, 5);
+}
+
+function drawFood(){
+  fill("orange");
+  noStroke();
+  ellipse(foodX*CELL+CELL/2, foodY*CELL+CELL/2, CELL-4, CELL-4);
+  fill("rgb(0,150,0)");
+  rect(foodX*CELL+8, foodY*CELL+2, 4, 6);
+}
+
+// ── 5. MOVIMENTO DA COBRA ────────────────────
+function moveSnake(){
+  if(alive === false){ return; }
+  moveTimer = moveTimer + 1;
+  if(moveTimer < moveSpeed){ return; }
+  moveTimer = 0;
+  dirX = nextX;
+  dirY = nextY;
+  var newX = (sX[0] + dirX + COLS) % COLS;
+  var newY = (sY[0] + dirY + ROWS) % ROWS;
+  var i;
+  for(i = snakeLen; i > 0; i--){
+    sX[i] = sX[i-1];
+    sY[i] = sY[i-1];
+  }
+  sX[0] = newX;
+  sY[0] = newY;
+}
+
+// ── 6. COMER E CRESCER ───────────────────────
+function checkFood(){
+  if(sX[0] === foodX && sY[0] === foodY){
+    score = score + 1;
+    snakeLen = snakeLen + 1;
+    if(moveSpeed > 3){ moveSpeed = moveSpeed - 0.3; }
+    foodX = randomNumber(0, COLS-1);
+    foodY = randomNumber(0, ROWS-1);
+  }
+}
+
+// ── 7. DRAW LOOP E CONTROLES ─────────────────
+function draw(){
+  drawBackground();
+  drawTallGrass();
+
+  if(keyDown("up")    && dirY !== 1 ){ nextX = 0;  nextY = -1; }
+  if(keyDown("down")  && dirY !== -1){ nextX = 0;  nextY = 1;  }
+  if(keyDown("left")  && dirX !== 1 ){ nextX = -1; nextY = 0;  }
+  if(keyDown("right") && dirX !== -1){ nextX = 1;  nextY = 0;  }
+
+  moveSnake();
+  checkFood();
+  if(gameOverOn === true){ checkDeath(); }
+  drawFood();
+  drawSnake();
+  drawScore();
+}
+
+// ── 8. GAME OVER ─────────────────────────────
+gameOverOn = true;
+
+function checkDeath(){
+  var i;
+  for(i = 1; i < snakeLen; i++){
+    if(sX[0] === sX[i] && sY[0] === sY[i]){
+      alive = false;
+      fill("rgba(0,0,0,0.6)");
+      rect(0,0,400,400);
+      fill("red");
+      textSize(30);
+      text("GAME OVER", 100, 160, 250, 50);
+      fill("white");
+      textSize(18);
+      text("Pontos: " + score, 150, 210, 150, 30);
+    }
+  }
+}
