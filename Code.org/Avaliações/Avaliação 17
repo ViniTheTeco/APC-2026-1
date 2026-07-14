@@ -1,0 +1,52 @@
+var coin = createSprite(200,10);
+coin.setAnimation("coin_gold_1");
+setCoin();
+
+var bunny = createSprite(200,350);
+bunny.setAnimation("bunny1_ready_1");
+
+var score = 0;
+
+function draw() {
+  if (score >= 10) {
+    drawSillyBackground();
+  } else {
+    drawSimpleBackground();
+  }
+  
+  if(keyDown("left")){
+    bunny.x = bunny.x - 2;
+  }
+  if(keyDown("right")){
+    bunny.x = bunny.x + 2;
+  }
+  if(coin.y > 400){
+    setCoin();
+  }
+  if(bunny.isTouching(coin)){
+    score = score + 1;
+    setCoin();
+  }
+  
+  textSize(20);
+  fill("black");
+  text("Score: " + score, 5, 5, 100, 100);
+  drawSprites();
+}
+
+function drawSimpleBackground() {
+  background("white");
+}
+
+function drawSillyBackground() {
+  background("rgb(255,100,200)");
+  fill("yellow");
+  textSize(30);
+  text("🎉 PARABÉNS! 🎉", 50, 200);
+}
+
+function setCoin() {
+  coin.velocityY = randomNumber(5, 10);
+  coin.y = 10;
+  coin.x = randomNumber(0, 400);
+}
