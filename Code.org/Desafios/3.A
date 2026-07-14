@@ -1,0 +1,9 @@
+var x = 200;
+var size = 150;
+background("lightblue");
+fill("yellow");
+ellipse(x, 200, size, size);
+fill("black");
+ellipse(x - size/5, 190, size/8, size/8);
+ellipse(x + size/5, 190, size/8, size/8);
+rect(x - size/4, 230, size/2, 10);
