@@ -1,0 +1,14 @@
+// Criar o chão (verde)
+var chao = createSprite(200, 350, 400, 100);
+chao.shapeColor = "green";
+
+// Criar o sol (amarelo)
+var sol = createSprite(350, 50, 60, 60);
+sol.shapeColor = "yellow";
+
+// Criar um personagem quadrado (vermelho)
+var personagem = createSprite(200, 270, 40, 40);
+personagem.shapeColor = "red";
+
+// Desenha tudo na tela
+drawSprites();
