@@ -1,0 +1,14 @@
+// Draw sky
+background("skyblue");
+
+// Draw sun
+fill("yellow");
+ellipse(300,50,50,50);
+
+// Draw grass
+fill("green");
+rect(0,300,400,100);
+
+// Draw cloud
+fill("white");
+ellipse(150,100,100,200);
