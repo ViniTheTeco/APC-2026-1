@@ -1,0 +1,4 @@
+var creature = createSprite(200, 200);
+creature.setAnimation("crowned_creature_1");
+creature.scale = 0.3;
+drawSprites();
