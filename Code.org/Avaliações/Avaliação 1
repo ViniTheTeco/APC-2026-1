@@ -1,0 +1,7 @@
+rect(175, 175);
+fill("purple");
+fill("orange");
+ellipse(150,150);
+ellipse(200,150);
+ellipse(150,200);
+ellipse(200,200);
