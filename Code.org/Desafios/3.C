@@ -1,0 +1,12 @@
+var color1 = "purple";
+var color2 = "orchid";
+var color3 = "pink";
+var color4 = "white";
+fill(color1);
+regularPolygon(200, 200, 5, 200);
+fill(color2);
+regularPolygon(200, 200, 6, 150);
+fill(color3);
+regularPolygon(200, 200, 7, 100);
+fill(color4);
+ellipse(200, 200, 100, 100);
