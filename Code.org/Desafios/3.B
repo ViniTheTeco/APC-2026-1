@@ -1,0 +1,10 @@
+var x = 50;
+background("white");
+fill("red");
+ellipse(x, 200, 50, 50);
+x = x + 50; ellipse(x, 200, 50, 50);
+x = x + 50; ellipse(x, 200, 50, 50);
+x = x + 50; ellipse(x, 200, 50, 50);
+x = x + 50; ellipse(x, 200, 50, 50);
+x = x + 50; ellipse(x, 200, 50, 50);
+x = x + 50; ellipse(x, 200, 50, 50);
