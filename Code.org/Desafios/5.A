@@ -1,0 +1,18 @@
+// Create kite sprite and set animation
+var kite = createSprite(300, 50);
+
+// Draw background
+background("skyblue");
+
+// Draw grass
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+
+// Draw string
+stroke("black");
+strokeWeight(5);
+line(150, 300, 300, 50);
+
+// Draw sprite
+drawSprites();
