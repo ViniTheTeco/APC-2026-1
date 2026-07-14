@@ -1,0 +1,17 @@
+var eyeSize = 27;
+
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,10,10);
+
+// Mouth
+fill("white");
+rect(160,240,80,20);
